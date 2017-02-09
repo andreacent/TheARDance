@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 462904643}
   - component: {fileID: 462904644}
   m_Layer: 0
-  m_Name: Marker Right
+  m_Name: Marker_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1284,7 +1284,7 @@ GameObject:
   - component: {fileID: 749657031}
   - component: {fileID: 749657032}
   m_Layer: 0
-  m_Name: Marker Up
+  m_Name: Marker_Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1394,7 +1394,7 @@ GameObject:
   - component: {fileID: 954671587}
   - component: {fileID: 954671588}
   m_Layer: 0
-  m_Name: Marker UR
+  m_Name: Marker_UR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1645,7 +1645,7 @@ GameObject:
   - component: {fileID: 1661453691}
   - component: {fileID: 1661453692}
   m_Layer: 0
-  m_Name: Marker Left
+  m_Name: Marker_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1689,7 +1689,7 @@ GameObject:
   - component: {fileID: 1717906281}
   - component: {fileID: 1717906282}
   m_Layer: 0
-  m_Name: Marker Ul
+  m_Name: Marker_Ul
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
