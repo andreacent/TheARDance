@@ -10,6 +10,7 @@ public class DancerController : MonoBehaviour {
 	public List<GameObject> cardsInPlay = new List<GameObject>();
 	private bool ready = false;
 	public int act_arrow = 3;
+	public int score;
 
 	public bool gameHasStarted = false;
 	public bool gameIsDone = false;
@@ -26,8 +27,21 @@ public class DancerController : MonoBehaviour {
 		}
 	}
 
-	//void Start () {
-	//}
+	void Start () {
+		StartCoroutine("ChangeActiveArrow");
+
+	}
+
+	IEnumerator ChangeActiveArrow() {
+		yield return new WaitForSeconds(1);
+		score = 0;
+		while(true){
+			for (int x = 0; x < 5; x++) {
+	        	yield return new WaitForSeconds(1);
+	        	act_arrow = x;
+	     	}
+	    }
+	}
 	
 	void Update () {
 		Debug.Log("DancerController:: Update - number of cards:" + cardsInPlay.Count);

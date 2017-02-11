@@ -28,7 +28,6 @@ public class ArrowBehaviors : MonoBehaviour {
 	
 	void OnEnable() {
 		ResetMe();
-		Debug.Log("Enable arrow "+Id+"\n\n\n\n\n");
 		if (DancerController.Instance.cardsInPlay.Count < DancerController.Instance.maxNumberOfCardsInPlay
 		    && !DancerController.Instance.cardsInPlay.Contains(gameObject)) {
 			DancerController.Instance.cardsInPlay.Add(gameObject);
@@ -41,9 +40,13 @@ public class ArrowBehaviors : MonoBehaviour {
 			return;
 		}
 		if (DancerController.Instance.act_arrow == Id){
-			Debug.Log("SUMO PUNTOS arrow "+Id+"\n\n\n\n\n");
+			//Deactive DacerController arrow
+			DancerController.Instance.act_arrow = -1;
+			//Add points
+			DancerController.Instance.score += 1;
+
 		}
-		Debug.Log("DISABLE arrow "+Id+"\n\n\n\n\n");
+		Debug.Log("DISABLED arrow "+Id+"\n\n\n\n\n");
 		DancerController.Instance.cardsInPlay.Remove(gameObject);
 	}
 
