@@ -5,15 +5,6 @@ public class ChangeColorArrow : MonoBehaviour {
 
 	public Material[] material;
 	Renderer rend;
-	private GameObject theCamera = null;
-
-	void OnEnable () {
-		FindCamera();
-	}
-
-	void FindCamera () {
-		theCamera = GameObject.FindWithTag("MainCamera");
-	}
 	
 	void Start () {
 		rend = transform.parent.Find("arrow").GetComponent<Renderer>();
@@ -25,10 +16,11 @@ public class ChangeColorArrow : MonoBehaviour {
 		ChangeColor();
 	}
 	
+	void OnDisable() {
+		rend.sharedMaterial = material[0];
+	}
+	
 	void ChangeColor() {
-		if(theCamera == null) {
-			FindCamera();
-		}
 		rend.sharedMaterial = material[1];
 	}	
 }

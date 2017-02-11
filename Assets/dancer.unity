@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2adeb5a7a78e5a74ca2cd0bde082093e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myColor: {fileID: 613267619}
+  myColor: {fileID: 0}
 --- !u!1 &462904642
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +319,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1661453691}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &613267621
 MonoBehaviour:
@@ -1504,7 +1504,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8f078ec545458b84b86cf22aaaef3b2a, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8f078ec545458b84b86cf22aaaef3b2a, type: 3}
       propertyPath: m_LocalScale.x
@@ -1980,8 +1980,8 @@ Transform:
   m_LocalPosition: {x: -0.4484, y: -0.139, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1180549003}
   - {fileID: 613267620}
+  - {fileID: 1180549003}
   m_Father: {fileID: 158354073}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
