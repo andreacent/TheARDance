@@ -16,7 +16,8 @@ public class ArrowBehaviors : MonoBehaviour {
 	//private Transform punchingGlove;
 	//private Vector3 punchingGloveStartPosition;
 
-	public GameObject myColor; 
+	public GameObject myColor;
+	public int Id;
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +28,7 @@ public class ArrowBehaviors : MonoBehaviour {
 	
 	void OnEnable() {
 		ResetMe();
-
+		Debug.Log("Enable arrow "+Id+"\n\n\n\n\n");
 		if (DancerController.Instance.cardsInPlay.Count < DancerController.Instance.maxNumberOfCardsInPlay
 		    && !DancerController.Instance.cardsInPlay.Contains(gameObject)) {
 			DancerController.Instance.cardsInPlay.Add(gameObject);
@@ -39,7 +40,10 @@ public class ArrowBehaviors : MonoBehaviour {
 			Debug.LogError("ArrowHolder::OnDisable - DancerController.Instance not set. Is there one in the scene?");
 			return;
 		}
-		
+		if (DancerController.Instance.act_arrow == Id){
+			Debug.Log("SUMO PUNTOS arrow "+Id+"\n\n\n\n\n");
+		}
+		Debug.Log("DISABLE arrow "+Id+"\n\n\n\n\n");
 		DancerController.Instance.cardsInPlay.Remove(gameObject);
 	}
 

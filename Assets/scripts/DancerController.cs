@@ -9,6 +9,7 @@ public class DancerController : MonoBehaviour {
 	public int cardsNeededForGameToStart = 2;
 	public List<GameObject> cardsInPlay = new List<GameObject>();
 	private bool ready = false;
+	public int act_arrow = 3;
 
 	public bool gameHasStarted = false;
 	public bool gameIsDone = false;
