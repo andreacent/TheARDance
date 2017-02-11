@@ -188,6 +188,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &413015836 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 8f078ec545458b84b86cf22aaaef3b2a, type: 3}
+  m_PrefabInternal: {fileID: 774381657}
+--- !u!114 &413015837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 413015836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2adeb5a7a78e5a74ca2cd0bde082093e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myColor: {fileID: 613267619}
 --- !u!1 &462904642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,6 +1999,22 @@ MonoBehaviour:
   secondsToRemainVisible: 0
   eventReceiver: {fileID: 0}
   _markerTag: left
+--- !u!1 &1704325569 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 8f078ec545458b84b86cf22aaaef3b2a, type: 3}
+  m_PrefabInternal: {fileID: 709211624}
+--- !u!114 &1704325570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1704325569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2adeb5a7a78e5a74ca2cd0bde082093e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myColor: {fileID: 824764476}
 --- !u!1 &1717906280
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,3 +2241,19 @@ Camera:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 8f078ec545458b84b86cf22aaaef3b2a, type: 3}
   m_PrefabInternal: {fileID: 1152626526}
+--- !u!1 &2050408628 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 8f078ec545458b84b86cf22aaaef3b2a, type: 3}
+  m_PrefabInternal: {fileID: 1461925596}
+--- !u!114 &2050408629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2050408628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2adeb5a7a78e5a74ca2cd0bde082093e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myColor: {fileID: 1447037816}
