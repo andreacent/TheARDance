@@ -9,7 +9,7 @@ public class DancerController : MonoBehaviour {
 	public int cardsNeededForGameToStart = 2;
 	public List<GameObject> cardsInPlay = new List<GameObject>();
 	private bool ready = false;
-	public int act_arrow = 3;
+	public int []  act_arrow;
 	public int score;
 
 	public bool gameHasStarted = false;
@@ -29,17 +29,28 @@ public class DancerController : MonoBehaviour {
 
 	void Start () {
 		StartCoroutine("ChangeActiveArrow");
-
+		score = 0;
+		act_arrow = new int [] { -1, -1 };
 	}
 
 	IEnumerator ChangeActiveArrow() {
-		yield return new WaitForSeconds(1);
-		score = 0;
 		while(true){
-			for (int x = 0; x < 5; x++) {
-	        	yield return new WaitForSeconds(1);
-	        	act_arrow = x;
-	     	}
+				yield return new WaitForSeconds(1);
+	        	act_arrow[0] = Random.Range(0, 5);
+
+	        	//Random 10% for aditional arrow
+	        	if ( 0 == Random.Range(0, 10) ){
+
+	        		act_arrow[1] = Random.Range(0, 5);
+
+	        		while (act_arrow[1] == act_arrow[0]) {
+						act_arrow[1] = Random.Range(0, 5);
+					}
+	        	}
+
+				else {
+					act_arrow[1] = -1;
+				}
 	    }
 	}
 	

@@ -39,12 +39,22 @@ public class ArrowBehaviors : MonoBehaviour {
 			Debug.LogError("ArrowHolder::OnDisable - DancerController.Instance not set. Is there one in the scene?");
 			return;
 		}
-		if (DancerController.Instance.act_arrow == Id){
-			//Deactive DacerController arrow
-			DancerController.Instance.act_arrow = -1;
+		if (DancerController.Instance.act_arrow[0] == Id){
+			//Deactive DancerController arrow
+			DancerController.Instance.act_arrow[0] = -1;
 			//Add points
-			DancerController.Instance.score += 1;
+			if (DancerController.Instance.act_arrow[0] == -1 && DancerController.Instance.act_arrow[1] == -1){
+				DancerController.Instance.score += 1;
+			}
 
+		}
+		else if (DancerController.Instance.act_arrow[1] == Id){
+			//Deactive DancerController arrow
+			DancerController.Instance.act_arrow[1] = -1;
+			//Add points
+			if (DancerController.Instance.act_arrow[0] == -1 && DancerController.Instance.act_arrow[1] == -1){
+				DancerController.Instance.score += 1;
+			}
 		}
 		Debug.Log("DISABLED arrow "+Id+"\n\n\n\n\n");
 		DancerController.Instance.cardsInPlay.Remove(gameObject);
