@@ -5,22 +5,23 @@ public class ChangeColorArrow : MonoBehaviour {
 
 	public Material[] material;
 	Renderer rend;
+
+	private Transform arrow;
+	private ArrowBehaviors arrowbehaviors;
 	
 	void Start () {
-		rend = transform.parent.Find("arrow").GetComponent<Renderer>();
+		arrow = transform.parent.Find("arrow");
+		arrowbehaviors = arrow.GetComponent<ArrowBehaviors>();
+		rend = arrow.GetComponent<Renderer>();
 		rend.enabled = true;
 		rend.sharedMaterial = material[0];
 	}
 
 	void Update () {
-		ChangeColor();
-	}
-	
-	void OnDisable() {
-		rend.sharedMaterial = material[0];
-	}
-	
-	void ChangeColor() {
-		rend.sharedMaterial = material[1];
+		if (arrowbehaviors.active){
+			rend.sharedMaterial = material[1];
+		}else{
+			rend.sharedMaterial = material[0];
+		}
 	}	
 }

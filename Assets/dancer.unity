@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -170,10 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f1af4435367214ba74e3b82794991c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxNumberOfCardsInPlay: 2
-  cardsNeededForGameToStart: 2
-  cardsInPlay: []
-  act_arrow: 0
+  score: 0
+  speed: 3
   gameHasStarted: 0
   gameIsDone: 0
 --- !u!4 &366684921
@@ -204,8 +202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2adeb5a7a78e5a74ca2cd0bde082093e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myColor: {fileID: 0}
-  Id: 3
+  active: 0
+  myColor: {fileID: 613267619}
 --- !u!1 &462904642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,6 +1419,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9aea6d65c15b19f4db0e1a1491483da8, type: 2}
+    - target: {fileID: 100000, guid: 8f078ec545458b84b86cf22aaaef3b2a, type: 3}
+      propertyPath: m_TagString
+      value: Marker
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f078ec545458b84b86cf22aaaef3b2a, type: 3}
   m_IsPrefabParent: 0
@@ -1534,7 +1536,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 9aea6d65c15b19f4db0e1a1491483da8, type: 2}
     - target: {fileID: 100000, guid: 8f078ec545458b84b86cf22aaaef3b2a, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Marker
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f078ec545458b84b86cf22aaaef3b2a, type: 3}
@@ -1597,8 +1599,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2adeb5a7a78e5a74ca2cd0bde082093e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 0
   myColor: {fileID: 978261556}
-  Id: 2
 --- !u!1 &910336018 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 8f078ec545458b84b86cf22aaaef3b2a, type: 3}
@@ -1614,8 +1616,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2adeb5a7a78e5a74ca2cd0bde082093e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 0
   myColor: {fileID: 470708410}
-  Id: 1
 --- !u!1 &954671586
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,7 +1771,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 9aea6d65c15b19f4db0e1a1491483da8, type: 2}
     - target: {fileID: 100000, guid: 8f078ec545458b84b86cf22aaaef3b2a, type: 3}
       propertyPath: m_TagString
-      value: Character
+      value: Marker
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f078ec545458b84b86cf22aaaef3b2a, type: 3}
@@ -1947,6 +1949,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9aea6d65c15b19f4db0e1a1491483da8, type: 2}
+    - target: {fileID: 100000, guid: 8f078ec545458b84b86cf22aaaef3b2a, type: 3}
+      propertyPath: m_TagString
+      value: Marker
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f078ec545458b84b86cf22aaaef3b2a, type: 3}
   m_IsPrefabParent: 0
@@ -2018,8 +2024,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2adeb5a7a78e5a74ca2cd0bde082093e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 0
   myColor: {fileID: 824764476}
-  Id: 0
 --- !u!1 &1717906280
 GameObject:
   m_ObjectHideFlags: 0
@@ -2130,7 +2136,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 9aea6d65c15b19f4db0e1a1491483da8, type: 2}
     - target: {fileID: 100000, guid: 8f078ec545458b84b86cf22aaaef3b2a, type: 3}
       propertyPath: m_TagString
-      value: Character
+      value: Marker
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f078ec545458b84b86cf22aaaef3b2a, type: 3}
@@ -2261,5 +2267,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2adeb5a7a78e5a74ca2cd0bde082093e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 0
   myColor: {fileID: 1447037816}
-  Id: 4
