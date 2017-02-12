@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 12b4b51bcc9f6b643a323373071e5bdc
-timeCreated: 1486864244
+guid: 8d49cb1459244b841a8c38e12367bf27
+timeCreated: 1486864925
 licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 4
@@ -9,9 +9,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Murky Buzz DEMO
+  fontName: THE CURIOUS INCIDENT
   fontNames:
-  - Murky Buzz DEMO
+  - THE CURIOUS INCIDENT
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
