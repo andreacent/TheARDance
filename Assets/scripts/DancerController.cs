@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class DancerController : MonoBehaviour {
 	public static DancerController Instance { get; private set; }
@@ -11,7 +12,12 @@ public class DancerController : MonoBehaviour {
 	public bool gameHasStarted = false;
 	public bool gameIsDone = false;
 
+	public float time_song = 0.95f;
+	public float time = 0f;
+	public Text gameover;
+
 	void Awake(){
+		gameover.text = "";
 		if (null == Instance) {
 			Instance = this;
 		} else {
@@ -26,7 +32,9 @@ public class DancerController : MonoBehaviour {
 
 	IEnumerator ChangeActiveArrow() {
 		int act;
-		while(true){
+		time = 0;
+		while(time < time_song){
+			time += Time.deltaTime;
 			act = Random.Range(0, 5);
 			markers[act].transform.GetComponent<ArrowBehaviors>().active = true;
 			Debug.Log("DancerController:: marker "+act+" active");
@@ -34,6 +42,7 @@ public class DancerController : MonoBehaviour {
 			markers[act].transform.GetComponent<ArrowBehaviors>().active = false;
 			Debug.Log("DancerController:: marker "+act+" desactive");
 		}
+		gameover.text = "GAME OVER";
 	}
 	
 	public void GameStart() {
