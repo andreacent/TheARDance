@@ -6,23 +6,33 @@ public class ArrowBehaviors : MonoBehaviour {
 	private enum PopupMode { None = 0, Started = 1, InProgress = 2, Ending = 3 };
 	private static Camera arCamera = null;
 
-	public bool active = false;
-	public GameObject myColor;
+	//public GameObject myColor;
 
-	// Use this for initialization
+	public bool active = false;
+	public Material[] material;
+	Renderer rend;
+
 	void Start () {
 		if (null == ArrowBehaviors.arCamera) {
 			ArrowBehaviors.arCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
 		}
+		rend = GetComponent<Renderer>();
+		rend.enabled = true;
+		rend.sharedMaterial = material[0];
 	}
 	
+	void Update () {
+		if (active) rend.sharedMaterial = material[1];
+		else rend.sharedMaterial = material[0];		
+	}	
+
 	void OnDisable() {
 		if (null == DancerController.Instance) {
 			Debug.LogError("ArrowHolder::OnDisable - DancerController.Instance not set. Is there one in the scene?");
 			return;
 		}
 		if (active){
-			DancerController.Instance.score += 1;
+			ScoreManager.score += 1;
 			active = false;
 		}
 	}

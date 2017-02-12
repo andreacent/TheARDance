@@ -6,13 +6,12 @@ public class DancerController : MonoBehaviour {
 	public static DancerController Instance { get; private set; }
 
 	private GameObject[] markers;
-	public int score;
 	public int speed = 3;
 
 	public bool gameHasStarted = false;
 	public bool gameIsDone = false;
 
-	void Awake() {
+	void Awake(){
 		if (null == Instance) {
 			Instance = this;
 		} else {
@@ -20,9 +19,8 @@ public class DancerController : MonoBehaviour {
 		}
 	}
 
-	void Start () {
+	void Start (){
 		markers = GameObject.FindGameObjectsWithTag("Marker");
-		score = 0;
 		StartCoroutine("ChangeActiveArrow");
 	}
 

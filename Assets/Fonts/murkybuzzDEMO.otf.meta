@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 12b4b51bcc9f6b643a323373071e5bdc
+timeCreated: 1486864244
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Murky Buzz DEMO
+  fontNames:
+  - Murky Buzz DEMO
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
