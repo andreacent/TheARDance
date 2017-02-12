@@ -6,8 +6,8 @@ public class DancerController : MonoBehaviour {
 	public static DancerController Instance { get; private set; }
 
 	private GameObject[] markers;
-	public int score = 0;
-	public int speed = 2;
+	public int score;
+	public int speed = 3;
 
 	public bool gameHasStarted = false;
 	public bool gameIsDone = false;
@@ -22,22 +22,20 @@ public class DancerController : MonoBehaviour {
 
 	void Start () {
 		markers = GameObject.FindGameObjectsWithTag("Marker");
+		score = 0;
 		StartCoroutine("ChangeActiveArrow");
 	}
 
 	IEnumerator ChangeActiveArrow() {
+		int act;
 		while(true){
-			for (int x = 0; x < 5; x++) {
-	        	yield return new WaitForSeconds(speed);
-        		Debug.Log("DancerController:: marker "+x+" active");
-
-        		//cambiarlo cuando este random
-        		if(x>0) markers[x-1].transform.GetComponent<ArrowBehaviors>().active = false;
-        		else markers[4].transform.GetComponent<ArrowBehaviors>().active = false;
-        		
-	        	markers[x].transform.GetComponent<ArrowBehaviors>().active = true;
-	     	}
-	    }
+			act = Random.Range(0, 5);
+			markers[act].transform.GetComponent<ArrowBehaviors>().active = true;
+			Debug.Log("DancerController:: marker "+act+" active");
+			yield return new WaitForSeconds(speed);
+			markers[act].transform.GetComponent<ArrowBehaviors>().active = false;
+			Debug.Log("DancerController:: marker "+act+" desactive");
+		}
 	}
 	
 	public void GameStart() {
