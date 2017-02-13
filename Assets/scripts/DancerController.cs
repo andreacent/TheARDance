@@ -9,7 +9,7 @@ public class DancerController : MonoBehaviour {
 	private int movements = 0;
 	private GameObject[] markers;
 	private int arrow_qty;
-	public int speed = 3;
+	public float speed = 1.0f;
 
 	public GameObject youWin;
 
@@ -47,17 +47,19 @@ public class DancerController : MonoBehaviour {
 			act = Random.Range(0, arrow_qty);
 			// active arrow with index act 
 			ActiveArrow(act);
-			yield return new WaitForSeconds(speed);
-			DesactiveArrow(act);
-
 			//Random 10% for aditional arrow
 			if ( 0 == Random.Range(0, 10) ){
 				do{ act1 = Random.Range(0, arrow_qty); } while (act == act1);
 				// active arrow with index act1
 				ActiveArrow(act1);
-				yield return new WaitForSeconds(speed);
-				DesactiveArrow(act1);
+			yield return new WaitForSeconds(speed);
+			DesactiveArrow(act1);
+			}else{
+
+			yield return new WaitForSeconds(speed);
 			}
+			// active arrow with index act 
+			DesactiveArrow(act);
 		}
 		GameFinish();
 	}
