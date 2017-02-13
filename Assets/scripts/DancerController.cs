@@ -16,7 +16,7 @@ public class DancerController : MonoBehaviour {
 	public bool gameHasStarted = false;
 	public bool gameIsDone = false;
 
-	private float time_song = 0.2f;
+	private float time_song = 0.1f;
 	private float time = 0f;
 	public Text gameover;
 
@@ -84,7 +84,7 @@ public class DancerController : MonoBehaviour {
 		if(ScoreManager.score >= movements * 90 * (0.01)){
 			gameover.text = "YOU WIN";
 		}else{
-			gameover.text = "GAME OVER";
+			//gameover.text = "GAME OVER";
 
 			//esto va cuando gana pero estoy probando
 			Debug.Log("DancerController::[YOU WIN] animation");
