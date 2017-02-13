@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ArrowBehaviors : MonoBehaviour {
-	private enum PopupMode { None = 0, Started = 1, InProgress = 2, Ending = 3 };
 	private static Camera arCamera = null;
 
 	//public GameObject myColor;
@@ -23,7 +22,7 @@ public class ArrowBehaviors : MonoBehaviour {
 	
 	void Update () {
 		if (active) rend.sharedMaterial = material[1];
-		else rend.sharedMaterial = material[0];		
+		else rend.sharedMaterial = material[0];
 	}	
 
 	void OnDisable() {

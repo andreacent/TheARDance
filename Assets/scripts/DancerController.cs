@@ -9,7 +9,18 @@ public class DancerController : MonoBehaviour {
 	private int movements = 0;
 	private GameObject[] markers;
 	private int arrow_qty;
-	public float speed = 1.0f;
+
+	//SOUND
+	public AudioSource audio;
+	public AudioClip[] tracks;
+	public float speed = 0.1f;
+
+	//Otra cosa
+	private Renderer arrow_left;
+	private Renderer arrow_up;
+	private Renderer arrow_right;
+	private bool ready = false;
+
 
 	//ANIMATIONS
 	public GameObject youWin;
@@ -18,11 +29,10 @@ public class DancerController : MonoBehaviour {
 	public bool gameHasStarted = false;
 	public bool gameIsDone = false;
 
-	private float time_song = 0.1f;
-	private float time = 0f;
 	public Text gameover;
 
 	void Awake(){
+		audio = GetComponent<AudioSource>();
 		gameover.text = "";
 		if (null == Instance) {
 			Instance = this;
@@ -32,6 +42,7 @@ public class DancerController : MonoBehaviour {
 	}
 
 	void Start (){
+		audio.clip = tracks[0];
 		youWin.SetActive(false);
 		youLose.SetActive(false);
 
@@ -39,14 +50,34 @@ public class DancerController : MonoBehaviour {
 		arrow_qty = markers.Length;
 		Debug.Log("DancerController::Start - Should have "+arrow_qty+" carts in scene");
 
-		StartCoroutine("ChangeActiveArrow");
+		arrow_left = markers[0].GetComponent<Renderer>();
+		arrow_up = markers[1].GetComponent<Renderer>();
+		arrow_right = markers[2].GetComponent<Renderer>();
+	}
+	void Update (){
+		if (Arrows_Visible() && ready == false){
+			ready = true;
+			StartCoroutine("ChangeActiveArrow");
+
+		}
+	}
+
+	void Animacion_321 () {
+
+	}
+
+	bool Arrows_Visible () {
+		if (arrow_left.isVisible && arrow_up.isVisible && arrow_right.isVisible) {
+			return true;
+		}
+		return false;
 	}
 
 	IEnumerator ChangeActiveArrow() {
 		int act,act1;
-		time = 0;
-		while(time < time_song){
-			time += Time.deltaTime;
+		//Animacion_321();
+		audio.Play();
+		while(audio.isPlaying){
 			act = Random.Range(0, arrow_qty);
 			// active arrow with index act 
 			ActiveArrow(act);
