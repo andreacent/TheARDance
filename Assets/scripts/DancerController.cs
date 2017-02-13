@@ -39,19 +39,6 @@ public class DancerController : MonoBehaviour {
 		StartCoroutine("ChangeActiveArrow");
 	}
 
-	void Update (){
-		if(gameIsDone){
-			// El jugador gana si logra mas de 90% de los movimientos
-			if(ScoreManager.score >= movements * 90 * (0.01)){
-				gameover.text = "YOU WIN";
-			}else{
-				gameover.text = "GAME OVER";
-				youWin.SetActive(true);
-				youWin.GetComponent<Animation>().Play("YouWin");
-			}
-		}
-	}
-
 	IEnumerator ChangeActiveArrow() {
 		int act,act1;
 		time = 0;
@@ -72,7 +59,7 @@ public class DancerController : MonoBehaviour {
 				DesactiveArrow(act1);
 			}
 		}
-		gameIsDone = true;
+		GameFinish();
 	}
 
 
@@ -89,5 +76,20 @@ public class DancerController : MonoBehaviour {
 	
 	public void GameStart() {
 		gameHasStarted = true;
+	}
+
+	public void GameFinish() {
+		gameIsDone = true;
+		// El jugador gana si logra mas de 90% de los movimientos
+		if(ScoreManager.score >= movements * 90 * (0.01)){
+			gameover.text = "YOU WIN";
+		}else{
+			gameover.text = "GAME OVER";
+
+			//esto va cuando gana pero estoy probando
+			Debug.Log("DancerController::[YOU WIN] animation");
+			youWin.SetActive(true);
+			youWin.GetComponent<Animation>().Play("YouWin");
+		}
 	}
 }

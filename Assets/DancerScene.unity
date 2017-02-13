@@ -225,7 +225,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 158354071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.49368316, y: 0.7001979, z: 0.8511288}
+  m_LocalPosition: {x: 440, y: 156, z: -220}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1964600206}
@@ -2045,11 +2045,11 @@ GameObject:
   - component: {fileID: 954671588}
   m_Layer: 0
   m_Name: Marker_UR
-  m_TagString: Untagged
+  m_TagString: Marker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &954671587
 Transform:
   m_ObjectHideFlags: 0
@@ -2095,7 +2095,7 @@ Animation:
   m_GameObject: {fileID: 1092608446}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: f79da526cd321c1428dbdbcf1b4c2419, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: f79da526cd321c1428dbdbcf1b4c2419, type: 3}
   m_WrapMode: 0
@@ -2200,8 +2200,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1272513977}
-  m_LocalRotation: {x: 0.7071069, y: -0, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: 0.58268315, y: 345.059, z: -0.7481285}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -379}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1964600206}
@@ -2341,8 +2341,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1392047967}
   m_LocalRotation: {x: 0.7071069, y: -0, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: 0.49368316, y: 344.29987, z: -0.8511288}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -5, z: 192}
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
   m_Children:
   - {fileID: 1092608447}
   m_Father: {fileID: 158354073}
@@ -2351,13 +2351,12 @@ Transform:
 --- !u!114 &1392047969
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400052, guid: 1f4b45a95b32140c280c28ee61c20724,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1392047967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 526fc5386a03e4d42b3fb3ece5024040, type: 3}
+  m_Script: {fileID: 11500000, guid: ac34bf3260f7c7c49942d568f8b66898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1461925596
@@ -2602,11 +2601,11 @@ GameObject:
   - component: {fileID: 1717906282}
   m_Layer: 0
   m_Name: Marker_Ul
-  m_TagString: Untagged
+  m_TagString: Marker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1717906281
 Transform:
   m_ObjectHideFlags: 0
@@ -2645,15 +2644,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400030, guid: f79da526cd321c1428dbdbcf1b4c2419, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 422
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: f79da526cd321c1428dbdbcf1b4c2419, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.000076293945
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: f79da526cd321c1428dbdbcf1b4c2419, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 202.00015
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: f79da526cd321c1428dbdbcf1b4c2419, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2757,15 +2756,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: f79da526cd321c1428dbdbcf1b4c2419, type: 3}
       propertyPath: m_LocalScale.x
-      value: 861.29724
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: f79da526cd321c1428dbdbcf1b4c2419, type: 3}
       propertyPath: m_LocalScale.y
-      value: 861.2995
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: f79da526cd321c1428dbdbcf1b4c2419, type: 3}
       propertyPath: m_LocalScale.z
-      value: 861.2995
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f79da526cd321c1428dbdbcf1b4c2419, type: 3}
@@ -2968,7 +2967,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1964600205}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1272513978}
