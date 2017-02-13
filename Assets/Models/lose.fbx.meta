@@ -1,0 +1,223 @@
+fileFormatVersion: 2
+guid: 60af86d0f7364f74e8f18bffd4b2a9ba
+timeCreated: 1487001035
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: gameover
+    100002: letterA
+    100004: letterE
+    100006: letterE1
+    100008: letterE2
+    100010: letterG
+    100012: letterL
+    100014: letterM
+    100016: letterO
+    100018: letterO1
+    100020: letterO2
+    100022: letterR
+    100024: letterS
+    100026: letterU
+    100028: letterV
+    100030: letterY
+    100032: //RootNode
+    100034: you_lose
+    400000: gameover
+    400002: letterA
+    400004: letterE
+    400006: letterE1
+    400008: letterE2
+    400010: letterG
+    400012: letterL
+    400014: letterM
+    400016: letterO
+    400018: letterO1
+    400020: letterO2
+    400022: letterR
+    400024: letterS
+    400026: letterU
+    400028: letterV
+    400030: letterY
+    400032: //RootNode
+    400034: you_lose
+    2300000: letterA
+    2300002: letterE
+    2300004: letterE1
+    2300006: letterE2
+    2300008: letterG
+    2300010: letterL
+    2300012: letterM
+    2300014: letterO
+    2300016: letterO1
+    2300018: letterO2
+    2300020: letterR
+    2300022: letterS
+    2300024: letterU
+    2300026: letterV
+    2300028: letterY
+    3300000: letterA
+    3300002: letterE
+    3300004: letterE1
+    3300006: letterE2
+    3300008: letterG
+    3300010: letterL
+    3300012: letterM
+    3300014: letterO
+    3300016: letterO1
+    3300018: letterO2
+    3300020: letterR
+    3300022: letterS
+    3300024: letterU
+    3300026: letterV
+    3300028: letterY
+    4300000: letterR
+    4300002: letterE1
+    4300004: letterV
+    4300006: letterO
+    4300008: letterE
+    4300010: letterM
+    4300012: letterA
+    4300014: letterG
+    4300016: letterE2
+    4300018: letterO1
+    4300020: letterY
+    4300022: letterU
+    4300024: letterL
+    4300026: letterS
+    4300028: letterO2
+    7400000: YouLose
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 1
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: YouLose
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 33
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: gameover
+        weight: 1
+      - path: gameover/letterA
+        weight: 1
+      - path: gameover/letterE
+        weight: 1
+      - path: gameover/letterE1
+        weight: 1
+      - path: gameover/letterG
+        weight: 1
+      - path: gameover/letterM
+        weight: 1
+      - path: gameover/letterO
+        weight: 1
+      - path: gameover/letterR
+        weight: 1
+      - path: gameover/letterV
+        weight: 1
+      - path: you_lose
+        weight: 1
+      - path: you_lose/letterE2
+        weight: 1
+      - path: you_lose/letterL
+        weight: 1
+      - path: you_lose/letterO1
+        weight: 1
+      - path: you_lose/letterO2
+        weight: 1
+      - path: you_lose/letterS
+        weight: 1
+      - path: you_lose/letterU
+        weight: 1
+      - path: you_lose/letterY
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

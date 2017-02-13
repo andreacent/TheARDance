@@ -11,7 +11,9 @@ public class DancerController : MonoBehaviour {
 	private int arrow_qty;
 	public float speed = 1.0f;
 
+	//ANIMATIONS
 	public GameObject youWin;
+	public GameObject youLose;
 
 	public bool gameHasStarted = false;
 	public bool gameIsDone = false;
@@ -31,6 +33,7 @@ public class DancerController : MonoBehaviour {
 
 	void Start (){
 		youWin.SetActive(false);
+		youLose.SetActive(false);
 
 		markers = GameObject.FindGameObjectsWithTag("Marker");
 		arrow_qty = markers.Length;
@@ -84,14 +87,13 @@ public class DancerController : MonoBehaviour {
 		gameIsDone = true;
 		// El jugador gana si logra mas de 90% de los movimientos
 		if(ScoreManager.score >= movements * 90 * (0.01)){
-			gameover.text = "YOU WIN";
-		}else{
-			//gameover.text = "GAME OVER";
-
-			//esto va cuando gana pero estoy probando
 			Debug.Log("DancerController::[YOU WIN] animation");
 			youWin.SetActive(true);
 			youWin.GetComponent<Animation>().Play("YouWin");
+		}else{
+			Debug.Log("DancerController::[YOU LOSE] animation");
+			youLose.SetActive(true);
+			youLose.GetComponent<Animation>().Play("YouLose");
 		}
 	}
 }
