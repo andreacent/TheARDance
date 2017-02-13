@@ -84,7 +84,6 @@ public class FisticuffsController : MonoBehaviour {
 			char1behaviors.myAttributes.SetActive(false);
 			char2behaviors.myAttributes.SetActive(false);
 		}
-		
 	}
 	
 	public void GameStart() {

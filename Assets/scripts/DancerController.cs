@@ -8,13 +8,15 @@ public class DancerController : MonoBehaviour {
 
 	private int movements = 0;
 	private GameObject[] markers;
-	public int arrow_qty = 3;
+	private int arrow_qty;
 	public int speed = 3;
+
+	public GameObject youWin;
 
 	public bool gameHasStarted = false;
 	public bool gameIsDone = false;
 
-	private float time_song = 0.95f;
+	private float time_song = 0.2f;
 	private float time = 0f;
 	public Text gameover;
 
@@ -28,8 +30,26 @@ public class DancerController : MonoBehaviour {
 	}
 
 	void Start (){
+		youWin.SetActive(false);
+
 		markers = GameObject.FindGameObjectsWithTag("Marker");
+		arrow_qty = markers.Length;
+		Debug.Log("DancerController::Start - Should have "+arrow_qty+" carts in scene");
+
 		StartCoroutine("ChangeActiveArrow");
+	}
+
+	void Update (){
+		if(gameIsDone){
+			// El jugador gana si logra mas de 90% de los movimientos
+			if(ScoreManager.score >= movements * 90 * (0.01)){
+				gameover.text = "YOU WIN";
+			}else{
+				gameover.text = "GAME OVER";
+				youWin.SetActive(true);
+				youWin.GetComponent<Animation>().Play("YouWin");
+			}
+		}
 	}
 
 	IEnumerator ChangeActiveArrow() {
@@ -52,14 +72,9 @@ public class DancerController : MonoBehaviour {
 				DesactiveArrow(act1);
 			}
 		}
-		
-		// El jugador gana si logra mas de 90% de los movimientos
-		if(ScoreManager.score >= movements * 90 * (0.01)){
-			gameover.text = "YOU WIN";
-		}else{
-			gameover.text = "GAME OVER";
-		}
+		gameIsDone = true;
 	}
+
 
 	void ActiveArrow(int act){
 		markers[act].transform.GetComponent<ArrowBehaviors>().active = true;

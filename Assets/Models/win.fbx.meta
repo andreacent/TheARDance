@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: f79da526cd321c1428dbdbcf1b4c2419
-timeCreated: 1486915046
+timeCreated: 1486941554
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -78,8 +78,9 @@ ModelImporter:
     4300020: pCylinder1
     4300022: pCylinder2
     4300024: pCylinder3
-    7400000: Take 001
+    7400000: YouWin
     9500000: //RootNode
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -98,9 +99,71 @@ ModelImporter:
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
-    animationWrapMode: 0
+    animationWrapMode: 1
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: YouWin
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: estrellas
+        weight: 1
+      - path: estrellas/estrellica:pCylinder1
+        weight: 1
+      - path: estrellas/pCylinder1
+        weight: 1
+      - path: estrellas/pCylinder2
+        weight: 1
+      - path: estrellas/pCylinder3
+        weight: 1
+      - path: polySurface1
+        weight: 1
+      - path: polySurface1/polySurface1_MeshPart0
+        weight: 1
+      - path: polySurface1/polySurface1_MeshPart1
+        weight: 1
+      - path: polySurface1/polySurface1_MeshPart2
+        weight: 1
+      - path: you_win
+        weight: 1
+      - path: you_win/letterI
+        weight: 1
+      - path: you_win/letterN
+        weight: 1
+      - path: you_win/letterO
+        weight: 1
+      - path: you_win/letterU
+        weight: 1
+      - path: you_win/letterW
+        weight: 1
+      - path: you_win/letterY
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -142,7 +205,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
