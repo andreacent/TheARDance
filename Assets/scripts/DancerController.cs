@@ -74,7 +74,7 @@ public class DancerController : MonoBehaviour {
 		// 3 2 1 START 
 		for(int x=3;x>0;x--){
 			start.text = x.ToString();
-			yield return new WaitForSeconds(2);
+			yield return new WaitForSeconds(1);
 		} start.text = "";
 
 		audio.Play();
