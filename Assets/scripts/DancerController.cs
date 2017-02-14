@@ -29,11 +29,11 @@ public class DancerController : MonoBehaviour {
 	public bool gameHasStarted = false;
 	public bool gameIsDone = false;
 
-	public Text gameover;
+	public Text start;
 
 	void Awake(){
 		audio = GetComponent<AudioSource>();
-		gameover.text = "";
+		start.text = "";
 		if (null == Instance) {
 			Instance = this;
 		} else {
@@ -58,12 +58,7 @@ public class DancerController : MonoBehaviour {
 		if (Arrows_Visible() && ready == false){
 			ready = true;
 			StartCoroutine("ChangeActiveArrow");
-
 		}
-	}
-
-	void Animacion_321 () {
-
 	}
 
 	bool Arrows_Visible () {
@@ -75,7 +70,13 @@ public class DancerController : MonoBehaviour {
 
 	IEnumerator ChangeActiveArrow() {
 		int act,act1;
-		//Animacion_321();
+
+		// 3 2 1 START 
+		for(int x=3;x>0;x--){
+			start.text = x.ToString();
+			yield return new WaitForSeconds(2);
+		} start.text = "";
+
 		audio.Play();
 		while(audio.isPlaying){
 			act = Random.Range(0, arrow_qty);
@@ -86,11 +87,10 @@ public class DancerController : MonoBehaviour {
 				do{ act1 = Random.Range(0, arrow_qty); } while (act == act1);
 				// active arrow with index act1
 				ActiveArrow(act1);
-			yield return new WaitForSeconds(speed);
-			DesactiveArrow(act1);
+				yield return new WaitForSeconds(speed);
+				DesactiveArrow(act1);
 			}else{
-
-			yield return new WaitForSeconds(speed);
+				yield return new WaitForSeconds(speed);
 			}
 			// active arrow with index act 
 			DesactiveArrow(act);
