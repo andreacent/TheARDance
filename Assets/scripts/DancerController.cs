@@ -15,6 +15,11 @@ public class DancerController : MonoBehaviour {
 	public AudioClip[] tracks;
 	public float speed = 0.1f;
 
+	//EFFECTS
+	public AudioSource crowdAudio;
+	public AudioSource explosionAudio;
+	public AudioSource popAudio;
+
 	//Otra cosa
 	private Renderer arrow_left;
 	private Renderer arrow_up;
@@ -25,9 +30,6 @@ public class DancerController : MonoBehaviour {
 	//ANIMATIONS
 	public GameObject youWin;
 	public GameObject youLose;
-
-	public bool gameHasStarted = false;
-	public bool gameIsDone = false;
 
 	public Text start;
 
@@ -74,6 +76,7 @@ public class DancerController : MonoBehaviour {
 		// 3 2 1 START 
 		for(int x=3;x>0;x--){
 			start.text = x.ToString();
+			popAudio.Play();
 			yield return new WaitForSeconds(1);
 		} start.text = "";
 
@@ -98,7 +101,6 @@ public class DancerController : MonoBehaviour {
 		GameFinish();
 	}
 
-
 	void ActiveArrow(int act){
 		markers[act].transform.GetComponent<ArrowBehaviors>().active = true;
 		Debug.Log("DancerController:: marker "+act+" active");
@@ -110,21 +112,18 @@ public class DancerController : MonoBehaviour {
 		Debug.Log("DancerController:: marker "+act+" desactive");
 	}
 	
-	public void GameStart() {
-		gameHasStarted = true;
-	}
-
 	public void GameFinish() {
-		gameIsDone = true;
 		// El jugador gana si logra mas de 90% de los movimientos
 		if(ScoreManager.score >= movements * 90 * (0.01)){
 			Debug.Log("DancerController::[YOU WIN] animation");
 			youWin.SetActive(true);
+			crowdAudio.Play();
 			youWin.GetComponent<Animation>().Play("YouWin");
 		}else{
 			Debug.Log("DancerController::[YOU LOSE] animation");
 			youLose.SetActive(true);
 			youLose.GetComponent<Animation>().Play("YouLose");
+			explosionAudio.Play();
 		}
 	}
 }
