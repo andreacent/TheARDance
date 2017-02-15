@@ -8,12 +8,14 @@ public class DancerController : MonoBehaviour {
 
 	private int movements = 0;
 	private GameObject[] markers;
+	private GameObject[] songs;
 	private int arrow_qty;
 
 	//SOUND
 	public AudioSource audio;
 	public AudioClip[] tracks;
-	public float speed = 0.1f;
+	public float speed;
+	private int song = -1;
 
 	//EFFECTS
 	public AudioSource crowdAudio;
@@ -25,6 +27,7 @@ public class DancerController : MonoBehaviour {
 	private Renderer arrow_up;
 	private Renderer arrow_right;
 	private bool ready = false;
+	private float time;
 
 
 	//ANIMATIONS
@@ -44,11 +47,12 @@ public class DancerController : MonoBehaviour {
 	}
 
 	void Start (){
-		audio.clip = tracks[0];
 		youWin.SetActive(false);
 		youLose.SetActive(false);
+		audio.clip = tracks[0];
 
 		markers = GameObject.FindGameObjectsWithTag("Marker");
+		songs = GameObject.FindGameObjectsWithTag("Song");
 		arrow_qty = markers.Length;
 		Debug.Log("DancerController::Start - Should have "+arrow_qty+" carts in scene");
 
@@ -58,9 +62,32 @@ public class DancerController : MonoBehaviour {
 	}
 	void Update (){
 		if (Arrows_Visible() && ready == false){
+			audio.Stop();
 			ready = true;
 			StartCoroutine("ChangeActiveArrow");
 		}
+		if (Song_Visible(0) && ready == false && song != 0) {
+			PreviewSong(0);
+			}
+		else if (Song_Visible(1) && ready == false && song != 1) {
+			PreviewSong(1);
+		}
+	}
+
+	void PreviewSong(int i){
+		audio.Stop();
+		song = i;
+		audio.clip = tracks[i];
+		audio.time = audio.clip.length * 0.21f;
+		audio.Play();
+
+	}
+
+	bool Song_Visible (int i) {
+		if (songs[i].GetComponent<Renderer>().isVisible) {
+			return true;
+		}
+		return false;
 	}
 
 	bool Arrows_Visible () {
@@ -72,7 +99,9 @@ public class DancerController : MonoBehaviour {
 
 	IEnumerator ChangeActiveArrow() {
 		int act,act1;
-
+		time = audio.clip.length * 0.5f;
+		speed = 1.5f;
+		audio.time = 0;
 		// 3 2 1 START 
 		for(int x=3;x>0;x--){
 			start.text = x.ToString();
@@ -82,6 +111,7 @@ public class DancerController : MonoBehaviour {
 
 		audio.Play();
 		while(audio.isPlaying){
+			if (audio.time > time) speed = 1;
 			act = Random.Range(0, arrow_qty);
 			// active arrow with index act 
 			ActiveArrow(act);
